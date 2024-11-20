@@ -17,7 +17,7 @@ grid-template-rows: 1fr min-content 1fr;
 padding: var(--space);
 block-size: 100vh;
 min-block-size: 768px;
-align-items: center;
+align-items: start;
 
 }
 .decorated-zone {
@@ -86,8 +86,7 @@ align-items: center;
 
 .header__theme-menu-button_type_light {
 }
-.header__theme-menu-button_active {
-}
+
 .header__theme-menu-button_type_auto {
 }
 .header__theme-menu-button_type_dark {
@@ -107,7 +106,7 @@ left: -2vw;
 }
 .title_text {
   color: var(--title-color, #000028);
-  font-family: IBM Plex Mono;
+  font-family: var(--main-font, Courier, monospace);
 font-weight: 700;
 line-height: 1.4625;
 text-align: left;
@@ -124,7 +123,6 @@ font-size: 18px;
 .header__rec::before, .header__rec::after {
  position: absolute; 
  color: var(--accent-color, #FF0070);
- 
 
 }
 
@@ -150,4 +148,47 @@ font-size: 18px;
   box-shadow: 0px 0px 4px 2px #FF0070;
   
 }
- 
+.main {
+  
+}
+.section {
+  padding: var(--space);
+}
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr; 
+  gap: var(--space);
+  width: 100%; /* Контейнер будет занимать всю ширину экрана */
+  min-width: 0; /* Позволяет контейнеру быть гибким */
+  
+}
+.section__main-heading {
+  color: var(--heading-color, #FF0070);
+  font-family: var(--main-font, Courier, monospace);
+font-size: 18px;
+font-weight: 700;
+line-height: 23.4px;
+text-align: left;
+
+}
+.article {
+}
+.article-heading {
+}
+.article__text {
+  color: var(--text-color, #F1B2CE);
+  overflow-wrap: break-word;
+font-size: 18px;
+font-weight: 400;
+line-height: 23.4px;
+  justify-self: start;
+  align-self: start;
+}
+.article__grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr; 
+  align-items: start;
+}
+.article__text-link {
+}
+
