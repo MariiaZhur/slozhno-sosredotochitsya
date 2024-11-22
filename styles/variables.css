@@ -4,9 +4,24 @@
 */
 :root {
   --main-font: 'IBM Plex mono';
+  --font-weight: 700;
+  --line-height: 23.4px;
+  --font-size: 18px;
   --space: 20px;
   --element-size: 25px;
-  
+  --title-paragraph-spacing: 10px;
+  --margin-end: 20px;
+  --margin-sn-end:80px;
+  --main-section-spacing: 60px;
+  --accent-color: #FF0070;
+  --bg-color: #000028;
+  --bg-image: url(../images/cover-image-dark.png);
+  --title-color: #000028;
+  --heading-color: #FF0070;
+  --main-heading-color: #DB00FF;
+  --text-color: #F1B2CE;
+  --button-text-color: #FF0070;
+  --border-color: #FF0070;
 
 }
 /*
