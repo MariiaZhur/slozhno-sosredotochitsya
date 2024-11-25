@@ -18,17 +18,28 @@
   --title-color: #353430;
 --button-text-color: #353430;
 --border-color: #353430;
+--border-color-button: rgba(50, 49, 45, 0.4);
+}
+.theme_light .header__rec {
+  display: none;
 }
   
   
-  
-/*
 @media (prefers-color-scheme: light) {
 :root {
-      /* Дублируем переменные светлой темы     
+  --accent-color: #FF8DCB;
+  --bg-color: #FFF1F7;
+  --bg-image: url(../images/cover-image-light.png); 
+  --heading-color: #353430;
+  --main-heading-color: #FFC2E6;
+  --text-color: #353430;
+  --title-color: #353430;
+--button-text-color: #353430;
+--border-color: #353430;
+--border-color-button: rgba(50, 49, 45, 0.4);
   }
-   .header__rec {
-        display: none;
-      }
+  .theme_light .header__rec {
+    display: none;
+  }
+   
     }
-*/ 

@@ -21,7 +21,7 @@ align-items: start;
 
 }
 .decorated-zone {
-
+position: relative;
 }
 .decorated-zone::before,
 .decorated-zone::after {
@@ -78,7 +78,8 @@ align-items: start;
   
 }
 .header__theme-menu-button:hover {
-  border-color: currentColor;  
+  border-color: var(--border-color-button);  
+  
 }
 .header__theme-menu-button:focus {
   outline: none; /* Убираем стандартное выделение */
@@ -91,7 +92,7 @@ align-items: start;
 .header__theme-menu-button_active {
   cursor: default;
   pointer-events: none;
-  border: 1px solid currentColor;
+  border: 1px solid var(--border-color);
 }
 
 .header__theme-menu-button_type_light {
@@ -131,23 +132,27 @@ font-size: var(--font-size);
   background-color: var(--accent-color, #FF0070);
 }
 
-
-.header__rec::before, .header__rec::after {
- position: absolute; 
- color: var(--accent-color, #FF0070);
-
+.header__rec {
+  position: absolute;
+  display: flex;
+  top: 20px;
+  right: 30px;
+  gap: 10px;
+  justify-content: center; /* Горизонтальное центрирование */
+    align-items: center;
 }
-
+.header__rec::before, .header__rec::after { 
+ color: var(--accent-color, #FF0070);
+}
 .header__rec::before {
-  content: "REС";
+  content: "REC";
   text-transform: uppercase;
   font-size: var(--font-size); 
   font-weight: 400; 
   line-height: 25px;
   width: 33px;
   height: 26px; 
-  top: 20px;
-  right: 48px;
+  
 }
 .header__rec::after {
   content: "";
@@ -158,6 +163,7 @@ font-size: var(--font-size);
   border-radius: 50%;
   background-color: var(--accent-color, #FF0070);
   box-shadow: 0px 0px 4px 2px #FF0070;
+  display : inline-block;
   
 }
 /*секции главные*/
@@ -220,15 +226,14 @@ font-weight: 400;
 .section__article-text-link:hover {
   border-bottom: 1px solid var(--text-color, #f1b2ce);
 }
-.content-block {
+.content-block-concentrate {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Три колонки одинаковой ширины */
-  grid-template-rows: repeat(2, auto); /* Две строки высотой по содержимому */
+  /*grid-template-rows: repeat(2, auto);  Две строки высотой по содержимому */
   gap: var(--space);
 }
 .heading-block {
-  grid-column: 1 / 2; /* Заголовок h2 занимает первую колонку */
-  grid-row: 1 / 2;
+  grid-column: 1 / 2; 
 }
 .article-block {
   grid-column: 1 / 2;
@@ -236,11 +241,11 @@ font-weight: 400;
 }
 
 .article-reordered-block {
-  grid-column: 2 / 3; /* Вторая строка, вторая колонка */
+  grid-column: 2 / 3; 
   grid-row: 2 / 3;
 }
 .article-change-block {
-  grid-column: 3 / 4; /* Вторая строка, третья колонка */
+  grid-column: 3 / 4; 
   grid-row: 2 / 3;
 }
 .article__actions-heading {
@@ -272,79 +277,60 @@ line-height: var(--line-height);
 }
 .gallery__item {
 }
-.section__image {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, auto);
-  gap: 20px;
-  grid-template-areas:
-  "sunset sunset ice-cream"
-  "tape  books ice-cream"
-  "tape books ice-cream"
-  "tape street street";
-}
-.image-sunset {
-  grid-area: sunset;
-}
-.image-ice-cream {
-  grid-area: ice-cream;
-}
-.image-tape {
-  grid-area: tape;
-}
-.image-books {
-  grid-area: books;
-}
-.image-street {
-  grid-area: street;
-}
-
-
-
 
 .image {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+  background-size: contain;
   background-position: center;
-	background-size: contain;
-	width: 100%;
-
+  display: block;
 }
-
-
-/*
-/*.gallery__item {
- width: 100%;
-  height: 100%;
-  max-height: 100%;
-  object-fit: cover; 
+.section__image {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: var(--space);
+}
+.gallery__item {
+  width: 100%; 
+  height: 100%; 
   margin: 0;
 }
-
 .gallery__item:nth-child(1) {
-  grid-column: span 2; 
-  grid-row: 1;
-  max-width: 649px;
+  grid-column: span 2;
 }
-
 .gallery__item:nth-child(2) {
-  grid-column: 3;
-  grid-row: 1 / 3;
-
-
+  grid-row: span 2;
 }
-
 .gallery__item:nth-child(3) {
-  grid-column: 1;
-  grid-row: 2 / 5;
+  grid-row: span 2;
 
 }
-
-.gallery__item:nth-child(4) {
-  grid-column: 2; /* Книги
-  grid-row: 2
- 
-}
-
 .gallery__item:nth-child(5) {
-  grid-column: span 3; /* Улица
- 
-}*/
+  grid-column: span 2;
+}
+.footer {
+padding: var(--space);
+block-size: 100vh;
+min-block-size: 768px;
+position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.footer__heading {
+  align-self: center;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  text-shadow: 2px 2px 0 var(--accent-color);
+  color: var(--main-heading-color, #DB00FF);
+  font-family: var(--main-font, Courier, monospace);
+font-weight: var(--font-weight);
+}
+
+
+
+
+
+
+
+
