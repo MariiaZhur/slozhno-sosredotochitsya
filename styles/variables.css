@@ -3,35 +3,39 @@
   и их переопределение под различные устройства
 */
 :root {
-  --main-font: 'IBM Plex mono';
+  --main-font: "IBM Plex mono";
   --font-weight: 700;
   --line-height: 23.4px;
   --font-size: 18px;
   --space: 20px;
+  --margin-inline: 20px;
   --element-size: 25px;
   --title-paragraph-spacing: 10px;
   --margin-end: 20px;
-  --margin-sn-end:80px;
+  --margin-sn-end: 80px;
+  --margin-sn-end-img: 60px;
   --main-section-spacing: 60px;
-  --accent-color: #FF0070;
+  --accent-color: #ff0070;
   --bg-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
   --title-color: #000028;
-  --heading-color: #FF0070;
-  --main-heading-color: #DB00FF;
-  --text-color: #F1B2CE;
-  --button-text-color: #FF0070;
-  --border-color: #FF0070;
-  --border-color-button:rgb(255 0 112 / 0.4);
-
+  --heading-color: #ff0070;
+  --main-heading-color: #db00ff;
+  --text-color: #f1b2ce;
+  --button-text-color: #ff0070;
+  --border-color: #ff0070;
+  --border-color-button: rgb(255 0 112 / 0.4);
+  --color-shadow: #ff0070;
 }
 .header__rec {
   display: block;
 }
-/*
-@media (width >= 768px) {
+
+@media (max-width: 376px) {
   :root {
-      
+    --main-section-spacing: 40px;
+    --margin-sn-end: 50px;
+    --margin-sn-end-img: 40px;
+    --margin-inline: 10px;
   }
 }
-*/
