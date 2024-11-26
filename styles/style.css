@@ -192,6 +192,7 @@
 
 .title-decor {
   background-color: var(--accent-color, #ff0070);
+  color: var(--title-color);
 }
 
 .header__rec {
@@ -284,6 +285,7 @@
 .article__heading {
   margin-block-end: var(--title-paragraph-spacing);
   line-height: var(--line-height);
+  
 }
 
 .article__text {
@@ -474,7 +476,7 @@
   font-family: var(--main-font, Courier, monospace);
   font-weight: var(--font-weight);
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--color-shadow);
 }
 @media (max-width: 376px) {
   .footer__heading {
