@@ -1,6 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 .page {
+  margin: 0 auto;
   font-family: var(--main-font, Courier, monospace);
   background-color: var(--bg-color, #000028);
   background-image: var(--bg-image);
@@ -9,17 +10,16 @@
   background-size: cover;
   background-attachment: fixed;
   min-inline-size: 360px;
-  margin: 0 auto;
 }
 
 .header {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   align-items: start;
+  width: 100%;
+  height: 100vh;
   padding: var(--space);
   min-block-size: 768px;
-  height: 100vh;
-  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -27,7 +27,7 @@
     align-items: center;
   }
 }
-@media (max-width: 376px) {
+@media (max-width: 550px) {
   .header {
     justify-content: center;
     padding: 10px;
@@ -55,7 +55,7 @@
   border-block-end: 1px solid var(--border-color);
 }
 
-@media (max-width: 376px) {
+@media (max-width: 550px) {
   .decorated-zone::before {
     bottom: 10px;
     left: 10px;
@@ -69,7 +69,7 @@
   border-block-start: 1px solid var(--border-color);
 }
 
-@media (max-width: 376px) {
+@media (max-width: 550px) {
   .decorated-zone::after {
     top: 10px;
     right: 10px;
@@ -156,7 +156,7 @@
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 550px) {
   .header_main-heading {
     left: 0;
     align-self: center;
@@ -184,7 +184,7 @@
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 550px) {
   .title_text {
     justify-self: center;
     max-width: 100%;
@@ -192,8 +192,8 @@
 }
 
 .title-decor {
-  background-color: var(--accent-color, #ff0070);
   color: var(--title-color);
+  background-color: var(--accent-color, #ff0070);
 }
 
 .header__rec {
@@ -206,7 +206,7 @@
   gap: 10px;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 550px) {
   .header__rec {
     top: 10px;
     right: 19px;
@@ -265,7 +265,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .hero-section {
     grid-template-columns: 1fr; /* Переход на одну колонку */
     grid-template-rows: auto; /* Высота элементов по содержимому */
@@ -284,24 +284,28 @@
 }*/
 .article__heading {
   margin-block-end: var(--title-paragraph-spacing);
-  line-height: var(--line-height);
   font-weight: var(--font-weight);
   font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 .article__text {
   justify-self: start;
   align-self: start;
+  margin-bottom: 10px; /* Отступ между параграфами */
   color: var(--text-color, #f1b2ce);
   font-weight: 400;
   font-size: var(--font-size);
   line-height: var(--line-height);
-  word-wrap: break-word;
+}
+
+.article__text:last-child {
+  margin-bottom: 0; /* Убираем отступ у последнего элемента */
 }
 
 .article-reordered {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto;
   align-items: start;
   gap: var(--space);
 }
@@ -334,6 +338,11 @@
 @media (max-width: 768px) {
   .section-content .section__main-heading {
     max-width: 236px;
+  }
+}
+@media (max-width: 550px) {
+  .section-content .section__main-heading {
+    max-width: 315px;
   }
 }
 .content-block-concentrate {
@@ -384,7 +393,7 @@
   }
 }
 
-/*запрос для ширины экрана 375px и меньше */
+/*запрос для ширины экрана меньше 550*/
 @media (max-width: 550px) {
   .section_main-list {
     grid-template-columns: 1fr; /* Переход на одну колонку */
@@ -432,13 +441,13 @@
   grid-column: span 2;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 550px) {
   .section__image {
     display: flex;
     flex-direction: column; /* Все элементы в один столбец */
   }
 }
-@media (max-width: 376px) {
+@media (max-width: 550px) {
   .title-heading-img {
     margin-block-end: 10px;
   }
@@ -450,9 +459,9 @@
   display: grid;
   justify-content: center;
   align-items: center;
-  padding: var(--space);
   height: 100vh; /* Изменено */
   min-height: 668px; /* добавлено */
+  padding: var(--space);
 }
 
 .footer__heading {
@@ -463,7 +472,7 @@
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   text-shadow: 2px 2px 0 var(--color-shadow);
 }
-@media (max-width: 376px) {
+@media (max-width: 550px) {
   .footer__heading {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     line-height: 82.5%;
